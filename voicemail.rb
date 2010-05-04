@@ -26,7 +26,7 @@ end
 
 helpers do
   def mail(subject, body)
-    Pony.mail(:to => ENV['EMAIL'], :via => :smtp, :via_options => SENDGRID_CONFIG, :subject => subject, :body => body)
+    Pony.mail(:from => ENV['SENDGRID_USERNAME'], :to => ENV['EMAIL'], :via => :smtp, :via_options => SENDGRID_CONFIG, :subject => subject, :body => body)
   end
 end
 
